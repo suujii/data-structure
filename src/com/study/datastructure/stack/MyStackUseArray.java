@@ -8,17 +8,27 @@ public class MyStackUseArray {
 	private int[] arr;
 	private int top;
 	private int size;
+	private static final int DATA_LIMIT = 0;
 
 	public MyStackUseArray(int size) {
 		this.arr = new int[size];
 		this.top = -1;
 		this.size = size;
+
+		for (int i = 0; i < size; i++) {
+			this.arr[i] = -1;
+		}
 	}
 
 	public void push(int data) {
 		if (isFull()) {
 			throw new IllegalStateException("stack is Full");
 		}
+
+		if (data < DATA_LIMIT) {
+			throw new IllegalArgumentException("data is invalid");
+		}
+
 		arr[++top] = data;
 	}
 
@@ -32,6 +42,7 @@ public class MyStackUseArray {
 		}
 
 		int data = arr[top];
+		arr[top] = -1;
 		top--;
 		return data;
 	}
@@ -42,7 +53,7 @@ public class MyStackUseArray {
 
 	public void print() {
 		for (int data : arr) {
-			if (data != 0) {
+			if (data != -1) {
 				System.out.println(data + " ");
 			}
 		}
