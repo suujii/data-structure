@@ -9,14 +9,10 @@ import java.util.List;
  */
 public class MyQueueUseList {
 	private List<Integer> queue;
-	private int front;
-	private int rear;
 	private int size;
 
 	public MyQueueUseList(int size) {
 		this.queue = new ArrayList<Integer>(size);
-		this.front = 0;
-		this.rear = -1;
 		this.size = size;
 	}
 
@@ -24,12 +20,11 @@ public class MyQueueUseList {
 		if (isFull()) {
 			throw new IllegalStateException("queue is full");
 		}
-		rear++;
 		queue.add(data);
 	}
 
 	public boolean isFull() {
-		return rear == size - 1;
+		return queue.size() == size;
 	}
 
 	public int dequeue() {
@@ -37,14 +32,13 @@ public class MyQueueUseList {
 			throw new IllegalStateException("queue is empty");
 		}
 
-		int data = queue.get(front);
-		queue.remove(front);
-		rear--;
+		int data = queue.get(0);
+		queue.remove(0);
 		return data;
 	}
 
 	public boolean isEmpty() {
-		return rear == -1;
+		return queue.size() == 0;
 	}
 
 	public void print() {
