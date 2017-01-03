@@ -23,6 +23,12 @@ public class MyStackUseArrayTest {
 		s.push(3);
 	}
 
+	@Test(expected = IllegalArgumentException.class)
+	public void testWhenArgumentError() {
+		MyStackUseArray s = new MyStackUseArray(2);
+		s.push(-1);
+	}
+
 	@Test
 	public void testWhenNotFull() {
 		MyStackUseArray s = new MyStackUseArray(2);
