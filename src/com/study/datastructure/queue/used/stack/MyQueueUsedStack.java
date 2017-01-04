@@ -7,23 +7,44 @@ import java.util.Stack;
  *
  */
 public class MyQueueUsedStack {
-	private Stack<Integer> s1;
-	private Stack<Integer> s2;
+	private Stack<Integer> pushStack;
+	private Stack<Integer> popStack;
 
 	public MyQueueUsedStack() {
-		this.s1 = new Stack<Integer>();
-		this.s2 = new Stack<Integer>();
+		this.pushStack = new Stack<Integer>();
+		this.popStack = new Stack<Integer>();
 	}
 
 	public void enqueue(Integer data) {
-		s1.push(data);
+		if (popStack.isEmpty() == false) {
+			int popStackSize = popStack.size();
+
+			for (int i = 0; i < popStackSize; i++) {
+				pushStack.add(popStack.pop());
+			}
+		}
+		pushStack.push(data);
 	}
 
 	public Integer dequeue() {
-		return s2.pop();
+		int size = pushStack.size();
+
+		for (int i = 0; i < size; i++) {
+			reverse();
+		}
+		return popStack.pop();
 	}
 
 	public void reverse() {
-		s2.push(s1.pop());
+		popStack.push(pushStack.pop());
+	}
+
+	public void print() {
+		int size = popStack.size();
+
+		for (int i = 0; i < size; i++) {
+			System.out.print(popStack.pop() + " ");
+		}
+		System.out.print("\n");
 	}
 }
