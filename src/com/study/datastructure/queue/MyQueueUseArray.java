@@ -4,17 +4,22 @@ package com.study.datastructure.queue;
  * @author SuJi, Lee
  *
  */
-public class MyQueue {
+public class MyQueueUseArray {
 	private int front;
 	private int rear;
 	private int[] arr;
 	private int size;
+	private static final int DATA_LIMIT = 0;
 
-	public MyQueue(int size) {
-		this.front = -1;
+	public MyQueueUseArray(int size) {
+		this.front = 0;
 		this.rear = -1;
 		this.arr = new int[size];
 		this.size = size;
+
+		for (int i = 0; i < size; i++) {
+			this.arr[i] = -1;
+		}
 	}
 
 	public void enqueue(int data) {
@@ -22,8 +27,11 @@ public class MyQueue {
 			throw new IllegalStateException("queue is Full");
 		}
 
-		arr[++front] = data;
-		++rear;
+		if (data < DATA_LIMIT) {
+			throw new IllegalArgumentException("data is invalid");
+		}
+
+		arr[++rear] = data;
 	}
 
 	public int dequeue() {
@@ -31,8 +39,10 @@ public class MyQueue {
 			throw new IllegalStateException("queue is empty");
 		}
 
-		int data = arr[rear];
-		rear--;
+		int data = arr[front];
+		arr[front] = -1;
+		front++;
+
 		return data;
 	}
 
@@ -41,6 +51,14 @@ public class MyQueue {
 	}
 
 	public boolean isEmpty() {
-		return front == rear;
+		return rear == -1;
+	}
+
+	public void print() {
+		for (int index = front; index < arr.length; index++) {
+			if (arr[index] != -1) {
+				System.out.println(arr[index] + " ");
+			}
+		}
 	}
 }
