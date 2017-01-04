@@ -36,7 +36,6 @@ public class MyQueueUseArrayTest {
 		q.enqueue(2);
 		q.dequeue();
 		q.enqueue(3);
-		System.out.println("==== test1 ====");
 		q.print(); // 2, 3이어야 하지만 현재 구조로는 queue full
 	}
 
@@ -50,7 +49,6 @@ public class MyQueueUseArrayTest {
 
 		q.dequeue();
 		q.dequeue();
-		System.out.println("==== test2 ====");
 		q.print(); // 3~10
 
 		MyQueueUseArray q2 = new MyQueueUseArray(QUEUE_SIZE);
@@ -63,7 +61,6 @@ public class MyQueueUseArrayTest {
 		q2.enqueue(5);
 		q2.dequeue();
 
-		System.out.println("==== test3 ====");
 		q2.print(); //4,5
 	}
 }

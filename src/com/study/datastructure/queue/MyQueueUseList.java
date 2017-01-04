@@ -43,7 +43,8 @@ public class MyQueueUseList {
 
 	public void print() {
 		for (int data : queue) {
-			System.out.println(data + " ");
+			System.out.print(data + " ");
 		}
+		System.out.print("\n");
 	}
 }

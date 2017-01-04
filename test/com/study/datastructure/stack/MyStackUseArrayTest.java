@@ -47,19 +47,15 @@ public class MyStackUseArrayTest {
 			s.push(i);
 		}
 
-		System.out.println("== test1 ==");
 		s.print(); // 1 ~ 10
 		s.pop();
 		s.pop();
-
-		System.out.println("== test2 ==");
 
 		s.print(); // 1 ~ 8
 
 		s.push(5);
 		s.push(3);
 
-		System.out.println("== test3 ==");
 		s.print(); // 1 ~ 8, 5, 3
 
 		MyStackUseArray s2 = new MyStackUseArray(STACK_SIZE);
@@ -68,7 +64,6 @@ public class MyStackUseArrayTest {
 		s2.push(3);
 		s2.pop();
 
-		System.out.println("== test4 ==");
 		s2.print(); // 1~2 
 
 		MyStackUseArray s3 = new MyStackUseArray(STACK_SIZE);
@@ -80,7 +75,6 @@ public class MyStackUseArrayTest {
 		s3.pop();
 		s3.push(6);
 
-		System.out.println("== test5 ==");
 		s3.print(); // 1,2,6 
 	}
 }

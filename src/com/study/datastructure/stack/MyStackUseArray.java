@@ -54,8 +54,9 @@ public class MyStackUseArray {
 	public void print() {
 		for (int data : arr) {
 			if (data != -1) {
-				System.out.println(data + " ");
+				System.out.print(data + " ");
 			}
 		}
+		System.out.print("\n");
 	}
 }

@@ -44,7 +44,8 @@ public class MyStackUseList {
 
 	public void print() {
 		for (int data : stack) {
-			System.out.println(data + " ");
+			System.out.print(data + " ");
 		}
+		System.out.print("\n");
 	}
 }

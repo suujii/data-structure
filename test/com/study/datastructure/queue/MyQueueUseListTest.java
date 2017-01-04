@@ -30,7 +30,6 @@ public class MyQueueUseListTest {
 		q.enqueue(2);
 		q.dequeue();
 		q.enqueue(3);
-		System.out.println("==== test1 ====");
 		q.print(); // 2,3
 	}
 
@@ -44,7 +43,6 @@ public class MyQueueUseListTest {
 
 		q.dequeue();
 		q.dequeue();
-		System.out.println("==== test2 ====");
 		q.print(); // 3~10
 
 		MyQueueUseList q2 = new MyQueueUseList(QUEUE_SIZE);
@@ -57,7 +55,6 @@ public class MyQueueUseListTest {
 		q2.enqueue(5);
 		q2.dequeue();
 
-		System.out.println("==== test3 ====");
 		q2.print(); //4,5
 	}
 

@@ -57,8 +57,9 @@ public class MyQueueUseArray {
 	public void print() {
 		for (int index = front; index < arr.length; index++) {
 			if (arr[index] != -1) {
-				System.out.println(arr[index] + " ");
+				System.out.print(arr[index] + " ");
 			}
 		}
+		System.out.print("\n");
 	}
 }
