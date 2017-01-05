@@ -7,14 +7,14 @@ import org.junit.Test;
  * @author SuJi, Lee
  *
  */
-public class MyQueueUsedStackTest {
+public class MyQueueUsedStackOneTest {
 	private static final int QUEUE_SIZE = 4;
 
-	private MyQueueUsedStack q;
+	private MyQueueUsedStackOne q;
 
 	@Before
 	public void setUp() {
-		q = new MyQueueUsedStack();
+		q = new MyQueueUsedStackOne();
 	}
 
 	@Test
