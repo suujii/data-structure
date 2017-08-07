@@ -11,6 +11,8 @@ public class CircularQueueUseArray {
 	private int size;
 	private static final int DATA_LIMIT = 0;
 
+	//test4
+
 	public CircularQueueUseArray(int size) {
 		this.front = 0;
 		this.rear = 0;
