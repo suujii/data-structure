@@ -11,6 +11,8 @@ public class MyQueueUseArray {
 	private int size;
 	private static final int DATA_LIMIT = 0;
 
+	//test2
+
 	public MyQueueUseArray(int size) {
 		this.front = 0;
 		this.rear = -1;
